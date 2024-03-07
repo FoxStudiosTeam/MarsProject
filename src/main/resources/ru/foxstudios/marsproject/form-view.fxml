@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.foxstudios.marsproject.controllers.ToSendMessageController">
+    <Pane fx:id="header" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #FF6F18;">
+        <children>
+            <Label fx:id="dateText" layoutX="689.0" layoutY="6.0" text="05.03.2024" textFill="WHITE">
+                <font>
+                    <Font name="Symbol" size="21.0" />
+                </font>
+            </Label>
+            <Button alignment="CENTER_RIGHT" layoutX="610.0" layoutY="3.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="72.0" style="-fx-background-color: #FF6F18;" text="RU" textFill="#fcfcfc">
+                <font>
+                    <Font name="Bookshelf Symbol 7" size="15.0" />
+                </font>
+                <graphic>
+                    <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@Geography.png" />
+                        </image>
+                    </ImageView>
+                </graphic></Button>
+            <Button fx:id="exitTaskPaneButton" layoutX="7.0" layoutY="3.0" mnemonicParsing="false" onAction="#ExitTaskPaneButton" prefHeight="13.0" prefWidth="89.0" style="-fx-background-color: #FF6F18; -fx-border-color: #ffffff; -fx-border-radius: 5px;" text="Назад" textFill="WHITE">
+                <font>
+                    <Font name="Bookshelf Symbol 7" size="18.0" />
+                </font></Button>
+        </children>
+        <effect>
+            <DropShadow />
+        </effect>
+    </Pane>
+    <Pane fx:id="taskPane" layoutX="77.0" layoutY="50.0" prefHeight="551.0" prefWidth="800.0">
+        <children>
+            <Pane layoutX="196.0" prefHeight="517.0" prefWidth="408.0" style="-fx-background-color: #FF6F18; -fx-border-radius: 10px; -fx-background-radius: 10px;">
+                <children>
+                    <TextArea fx:id="textAreaInfoMessage" layoutX="14.0" layoutY="109.0" prefHeight="346.0" prefWidth="381.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" />
+                    <Button fx:id="pinFileButton" layoutX="16.0" layoutY="461.0" mnemonicParsing="false" onAction="#PinFileButton" prefHeight="41.0" prefWidth="180.0" style="-fx-background-color: #FF6F18; -fx-border-color: #ffffff; -fx-border-radius: 5px;" text="Прикрепить файл" textFill="#fcfcfc">
+                        <font>
+                            <Font size="18.0" />
+                        </font></Button>
+                    <TextField fx:id="textFieldNameMessage" layoutX="14.0" layoutY="41.0" prefHeight="30.0" prefWidth="381.0">
+                        <font>
+                            <Font size="14.0" />
+                        </font></TextField>
+                    <Label layoutX="14.0" layoutY="14.0" text="Ф.И.О." textFill="WHITE">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="16.0" layoutY="79.0" text="Отчет" textFill="WHITE">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </Label>
+                  <Button fx:id="toSendButton" layoutX="215.0" layoutY="461.0" mnemonicParsing="false" onAction="#ToSendButton" prefHeight="41.0" prefWidth="180.0" style="-fx-background-color: #FF6F18; -fx-border-color: #ffffff; -fx-border-radius: 5px;" text="Отправить" textFill="WHITE">
+                      <font>
+                          <Font size="18.0" />
+                      </font>
+               </Button>
+                </children>
+            </Pane>
+              <Label fx:id="pinFileNameLabel" layoutX="20.0" layoutY="465.0" prefHeight="30.0" prefWidth="172.0" textFill="#ff6f18">
+                  <font>
+                      <Font name="Bookshelf Symbol 7" size="15.0" />
+                  </font>
+         </Label>
+        </children>
+    </Pane>
+</VBox>

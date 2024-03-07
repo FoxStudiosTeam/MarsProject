@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.foxstudios.marsproject.controllers.MarsController">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <children>
+      <Pane fx:id="header" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #FF6F18;">
+         <children>
+            <Label fx:id="dateText" layoutX="689.0" layoutY="6.0" text="05.03.2024" textFill="WHITE">
+               <font>
+                  <Font name="Symbol" size="21.0" />
+               </font>
+            </Label>
+            <Button alignment="CENTER_RIGHT" layoutX="603.0" layoutY="3.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="72.0" style="-fx-background-color: #FF6F18;" text="RU" textFill="#fcfcfc">
+               <font>
+                  <Font name="Bookshelf Symbol 7" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Geography.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="main" prefHeight="536.0" prefWidth="800.0">
+         <children>
+            <Button fx:id="historyButton" graphicTextGap="40.0" layoutX="430.0" layoutY="177.0" mnemonicParsing="false" onAction="#HistoryTask" prefHeight="106.0" prefWidth="282.0" style="-fx-background-color: #FF6F18; -fx-text-fill: white; -fx-content-display: right; -fx-background-radius: 10px;" text="История" wrapText="true">
+               <font>
+                  <Font name="Fira Code Medium" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <graphic>
+                  <ImageView fitHeight="119.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image_2.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="createTaskButton" alignment="TOP_LEFT" layoutX="91.0" layoutY="177.0" mnemonicParsing="false" onAction="#CreateTask" prefHeight="132.0" prefWidth="282.0" style="-fx-background-color: #FF6F18; -fx-text-fill: white; -fx-content-display: right; -fx-background-radius: 10px;" text="Написать отчет" wrapText="true">
+               <font>
+                  <Font name="Fira Code Medium" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="116.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image_1.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane fx:id="historyPane" layoutX="26.0" layoutY="24.0" prefHeight="487.0" prefWidth="756.0" visible="false">
+               <children>
+                  <Pane layoutX="119.0" layoutY="6.0" prefHeight="424.0" prefWidth="521.0" style="-fx-background-color: #FF6F18;" />
+                  <Button fx:id="backMainFromHistoryButton" layoutX="352.0" layoutY="448.0" mnemonicParsing="false" onAction="#BackMainFromHistoryButton" text="Назад" />
+               </children>
+            </Pane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" spread="0.13" />
+         </effect>
+      </Pane>
+   </children>
+</VBox>
