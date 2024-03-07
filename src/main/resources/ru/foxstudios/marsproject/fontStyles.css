@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Jura SemiBold";
+    src: url("Jura-SemiBold.ttf");
+}
+.JuraFont14 {
+    -fx-font-family: "Jura SemiBold";
+    -fx-font-size: 14px;
+}
+.JuraFont18 {
+    -fx-font-family: "Jura SemiBold";
+    -fx-font-size: 18px;
+}
+.JuraFont19 {
+    -fx-font-family: "Jura SemiBold";
+    -fx-font-size: 19px;
+}
+.JuraFont24 {
+    -fx-font-family: "Jura SemiBold";
+    -fx-font-size: 24px;
+}
+.JuraFont28 {
+    -fx-font-family: "Jura SemiBold";
+    -fx-font-size: 28px;
+}

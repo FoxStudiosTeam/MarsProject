@@ -1,5 +1,6 @@
 package ru.foxstudios.marsproject.controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,9 +24,7 @@ public class MarsController {
     @FXML
     public Button historyButton;
     @FXML
-    public Pane historyPane;
-    @FXML
-    public Button backMainFromHistoryButton;
+    public Button closeProgram;
     @FXML
     public void CreateTask(ActionEvent event) throws IOException {
         MarsApplication.changeScene("form-view.fxml");
@@ -35,10 +34,8 @@ public class MarsController {
         MarsApplication.changeScene("history-view.fxml");
     }
     @FXML
-    public void BackMainFromHistoryButton(ActionEvent event){
-        historyPane.setVisible(false);
-        createTaskButton.setVisible(true);
-        historyButton.setVisible(true);
+    public void CloseProgram(ActionEvent event){
+        Platform.exit();
     }
     @FXML
     public void initialize() {

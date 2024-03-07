@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
@@ -7,28 +9,64 @@
 <?import javafx.scene.text.*?>
 
 <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.foxstudios.marsproject.controllers.HistoryMessageController">
-    <Pane fx:id="header" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #FF6F18;">
+    <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #2C2C2C;">
         <children>
-            <Label fx:id="dateText" layoutX="689.0" layoutY="6.0" text="05.03.2024" textFill="WHITE">
+            <Label fx:id="dateTextHistory" layoutX="650.0" layoutY="8.0" prefWidth="110.0" styleClass="JuraFont19" stylesheets="@fontStyles.css" text="00.00.0000" textFill="WHITE">
                 <font>
-                    <Font name="Symbol" size="21.0" />
+                    <Font size="19.0" />
                 </font>
             </Label>
-            <Button alignment="CENTER_RIGHT" layoutX="610.0" layoutY="3.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="72.0" style="-fx-background-color: #FF6F18;" text="RU" textFill="#fcfcfc">
+            <Button alignment="CENTER" graphicTextGap="2.0" layoutX="582.0" layoutY="4.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="58.0" style="-fx-background-color: #2C2C2C; -fx-padding: 0 0 0 0;" text="RU" textFill="#fcfcfc">
                 <font>
-                    <Font name="Bookshelf Symbol 7" size="15.0" />
+                    <Font name="Inter Regular" size="15.0" />
                 </font>
                 <graphic>
-                    <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                    <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                             <Image url="@Geography.png" />
                         </image>
                     </ImageView>
+                </graphic>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor></Button>
+            <ImageView fitHeight="25.0" fitWidth="183.0" layoutX="320.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@CosmoFox.png" />
+                </image>
+            </ImageView>
+            <Button layoutX="538.0" layoutY="4.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: #2C2C2C;">
+                <graphic>
+                    <ImageView fitHeight="225.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@changeTopic.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+            </Button>
+            <Button fx:id="closeProgramHistory" layoutX="760.0" layoutY="3.0" mnemonicParsing="false" onAction="#CloseProgramHistory" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: #2C2C2C; -fx-padding: 0 0 0 0;">
+                <graphic>
+                    <ImageView fitHeight="21.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@Vector.png" />
+                        </image>
+                    </ImageView>
                 </graphic></Button>
-            <Button fx:id="exitHistoryPaneButton" layoutX="7.0" layoutY="3.0" mnemonicParsing="false" onAction="#ExitHistoryPaneButton" prefHeight="13.0" prefWidth="89.0" style="-fx-background-color: #FF6F18; -fx-border-color: #ffffff; -fx-border-radius: 5px;" text="Назад" textFill="WHITE">
+            <Button fx:id="exitHistoryPaneButton" layoutX="6.0" layoutY="4.0" mnemonicParsing="false" onAction="#ExitHistoryPaneButton" prefHeight="33.0" prefWidth="88.0" style="-fx-background-color: #2C2C2C; -fx-border-color: white; -fx-border-radius: 5px; -fx-padding: 0 0 0 0;" styleClass="JuraFont18" stylesheets="@fontStyles.css" text="Назад" textFill="WHITE">
                 <font>
-                    <Font name="Bookshelf Symbol 7" size="18.0" />
+                    <Font size="14.0" />
                 </font></Button>
+            <Button fx:id="swapForm" layoutX="100.0" layoutY="4.0" mnemonicParsing="false" onAction="#SwapForm" prefHeight="33.0" prefWidth="144.0" style="-fx-background-color: #2C2C2C; -fx-border-color: white; -fx-border-radius: 5px; -fx-padding: 0 0 0 0;" styleClass="JuraFont18" stylesheets="@fontStyles.css" text="Новый отчет" textFill="WHITE">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
         </children>
         <effect>
             <DropShadow />
@@ -36,7 +74,7 @@
     </Pane>
    <Pane prefHeight="555.0" prefWidth="800.0">
       <children>
-         <VBox layoutX="55.0" prefHeight="515.0" prefWidth="691.0" style="-fx-background-color: #FF6F18; -fx-border-radius: 5px; -fx-background-radius: 5px;" />
+         <VBox alignment="TOP_CENTER" layoutX="55.0" prefHeight="515.0" prefWidth="691.0" style="-fx-background-color: FF8E3D; -fx-border-radius: 5px; -fx-background-radius: 5px;" />
       </children>
    </Pane>
 </VBox>

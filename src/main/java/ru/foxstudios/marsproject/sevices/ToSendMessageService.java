@@ -8,6 +8,5 @@ public class ToSendMessageService {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out, StandardCharsets.UTF_8));
         writer.write(message);
         writer.flush();
-
     }
 }

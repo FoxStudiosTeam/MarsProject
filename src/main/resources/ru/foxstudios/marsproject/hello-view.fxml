@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.foxstudios.marsproject.controllers.MarsController">
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.foxstudios.marsproject.controllers.MarsController">
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
@@ -16,21 +16,52 @@
       <Cursor fx:constant="DEFAULT" />
    </cursor>
    <children>
-      <Pane fx:id="header" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #FF6F18;">
+      <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #2C2C2C;">
          <children>
-            <Label fx:id="dateText" layoutX="689.0" layoutY="6.0" text="05.03.2024" textFill="WHITE">
+            <Label fx:id="dateText" layoutX="650.0" layoutY="8.0" prefWidth="110.0" styleClass="JuraFont19" stylesheets="@fontStyles.css" text="00.00.0000" textFill="WHITE">
                <font>
-                  <Font name="Symbol" size="21.0" />
+                  <Font size="19.0" />
                </font>
             </Label>
-            <Button alignment="CENTER_RIGHT" layoutX="603.0" layoutY="3.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="72.0" style="-fx-background-color: #FF6F18;" text="RU" textFill="#fcfcfc">
+            <Button alignment="CENTER" graphicTextGap="2.0" layoutX="582.0" layoutY="4.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="58.0" style="-fx-background-color: #2C2C2C; -fx-padding: 0 0 0 0;" text="RU" textFill="#fcfcfc">
                <font>
-                  <Font name="Bookshelf Symbol 7" size="15.0" />
+                  <Font name="Inter Regular" size="15.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Geography.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <ImageView fitHeight="25.0" fitWidth="183.0" layoutX="320.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@CosmoFox.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="541.0" layoutY="4.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: #2C2C2C; -fx-padding: 0 0 0 0;">
+               <graphic>
+                  <ImageView fitHeight="225.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@changeTopic.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="closeProgram" layoutX="760.0" layoutY="3.0" mnemonicParsing="false" onAction="#CloseProgram" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: #2C2C2C; -fx-padding: 0 0 0 0;">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Vector.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -41,7 +72,7 @@
       </Pane>
       <Pane fx:id="main" prefHeight="536.0" prefWidth="800.0">
          <children>
-            <Button fx:id="historyButton" graphicTextGap="40.0" layoutX="430.0" layoutY="177.0" mnemonicParsing="false" onAction="#HistoryTask" prefHeight="106.0" prefWidth="282.0" style="-fx-background-color: #FF6F18; -fx-text-fill: white; -fx-content-display: right; -fx-background-radius: 10px;" text="История" wrapText="true">
+            <Button fx:id="historyButton" alignment="TOP_RIGHT" graphicTextGap="40.0" layoutX="429.0" layoutY="177.0" mnemonicParsing="false" onAction="#HistoryTask" prefHeight="132.0" prefWidth="305.0" style="-fx-background-color: FF8E3D; -fx-text-fill: white; -fx-content-display: right; -fx-background-radius: 7px; -fx-padding: 1 1 0 0;" styleClass="JuraFont28" stylesheets="@fontStyles.css" text="История" wrapText="true">
                <font>
                   <Font name="Fira Code Medium" size="24.0" />
                </font>
@@ -49,7 +80,7 @@
                   <Insets />
                </opaqueInsets>
                <graphic>
-                  <ImageView fitHeight="119.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="134.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image_2.png" />
                      </image>
@@ -58,13 +89,16 @@
                      </viewport>
                   </ImageView>
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Button fx:id="createTaskButton" alignment="TOP_LEFT" layoutX="91.0" layoutY="177.0" mnemonicParsing="false" onAction="#CreateTask" prefHeight="132.0" prefWidth="282.0" style="-fx-background-color: #FF6F18; -fx-text-fill: white; -fx-content-display: right; -fx-background-radius: 10px;" text="Написать отчет" wrapText="true">
+            <Button fx:id="createTaskButton" alignment="TOP_LEFT" contentDisplay="RIGHT" depthTest="DISABLE" graphicTextGap="1.0" layoutX="74.0" layoutY="177.0" mnemonicParsing="false" onAction="#CreateTask" prefHeight="132.0" prefWidth="297.0" style="-fx-background-color: FF8E3D; -fx-text-fill: white; -fx-background-radius: 7px; -fx-padding: 1 1 0 20;" styleClass="JuraFont28" stylesheets="@fontStyles.css" text="Написать отчет" wrapText="true">
                <font>
-                  <Font name="Fira Code Medium" size="24.0" />
+                  <Font name="Wingdings 2" size="24.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="116.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="139.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image_1.png" />
                      </image>
@@ -73,13 +107,13 @@
                      </viewport>
                   </ImageView>
                </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Pane fx:id="historyPane" layoutX="26.0" layoutY="24.0" prefHeight="487.0" prefWidth="756.0" visible="false">
-               <children>
-                  <Pane layoutX="119.0" layoutY="6.0" prefHeight="424.0" prefWidth="521.0" style="-fx-background-color: #FF6F18;" />
-                  <Button fx:id="backMainFromHistoryButton" layoutX="352.0" layoutY="448.0" mnemonicParsing="false" onAction="#BackMainFromHistoryButton" text="Назад" />
-               </children>
-            </Pane>
          </children>
          <opaqueInsets>
             <Insets />
