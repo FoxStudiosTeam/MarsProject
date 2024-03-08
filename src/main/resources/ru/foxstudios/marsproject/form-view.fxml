@@ -9,120 +9,161 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.foxstudios.marsproject.controllers.ToSendMessageController">
-      <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #2C2C2C;">
-          <children>
-              <Label fx:id="dateTextCreateTask" layoutX="650.0" layoutY="8.0" prefWidth="110.0" styleClass="JuraFont19" stylesheets="@fontStyles.css" text="00.00.0000" textFill="WHITE">
-                  <font>
-                      <Font size="19.0" />
-                  </font>
-              </Label>
-              <Button alignment="CENTER" graphicTextGap="2.0" layoutX="582.0" layoutY="4.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="58.0" style="-fx-background-color: #2C2C2C; -fx-padding: 0 0 0 0;" text="RU" textFill="#fcfcfc">
-                  <font>
-                      <Font name="Inter Regular" size="15.0" />
-                  </font>
-                  <graphic>
-                      <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
-                              <Image url="@Geography.png" />
-                          </image>
-                      </ImageView>
-                  </graphic>
-                  <opaqueInsets>
-                      <Insets />
-                  </opaqueInsets>
+<VBox fx:id="toSendMessageVBox" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.foxstudios.marsproject.controllers.ToSendMessageController">
+   <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0">
+      <children>
+            <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #2C2C2C;">
+                <children>
+                    <Label fx:id="dateTextCreateTask" layoutX="650.0" layoutY="8.0" prefWidth="110.0" styleClass="JuraFont19" stylesheets="@fontStyles.css" text="00.00.0000" textFill="WHITE">
+                        <font>
+                            <Font size="19.0" />
+                        </font>
+                    </Label>
+                    <Button fx:id="langTaskButton" alignment="CENTER" graphicTextGap="2.0" layoutX="582.0" layoutY="4.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#LangTaskButton" prefHeight="33.0" prefWidth="58.0" style="-fx-background-color: #2C2C2C; -fx-padding: 0 0 0 0;" text="RU" textFill="#fcfcfc">
+                        <font>
+                            <Font name="Inter Regular" size="15.0" />
+                        </font>
+                        <graphic>
+                            <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@Geography.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <opaqueInsets>
+                            <Insets />
+                        </opaqueInsets>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+               </Button>
+                    <ImageView fitHeight="25.0" fitWidth="183.0" layoutX="320.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@CosmoFox.png" />
+                        </image>
+                    </ImageView>
+                    <Button fx:id="changeThemeTaskButton" layoutX="538.0" layoutY="4.0" mnemonicParsing="false" onAction="#ChangeThemeTaskButton" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: #2C2C2C;">
+                        <graphic>
+                            <ImageView fitHeight="225.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@changeTheme.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Button>
+                    <Button fx:id="closeProgramTask" layoutX="760.0" layoutY="3.0" mnemonicParsing="false" onAction="#CloseProgramTask" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: #2C2C2C; -fx-padding: 0 0 0 0;">
+                        <graphic>
+                            <ImageView fitHeight="21.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@Vector.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
                   <cursor>
-                      <Cursor fx:constant="HAND" />
-                  </cursor></Button>
-              <ImageView fitHeight="25.0" fitWidth="183.0" layoutX="320.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                      <Image url="@CosmoFox.png" />
-                  </image>
-              </ImageView>
-              <Button layoutX="538.0" layoutY="4.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: #2C2C2C;">
-                  <graphic>
-                      <ImageView fitHeight="225.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
-                              <Image url="@changeTopic.png" />
-                          </image>
-                      </ImageView>
-                  </graphic>
-                  <cursor>
-                      <Cursor fx:constant="HAND" />
+                     <Cursor fx:constant="HAND" />
                   </cursor>
-              </Button>
-              <Button fx:id="closeProgramTask" layoutX="760.0" layoutY="3.0" mnemonicParsing="false" onAction="#CloseProgramTask" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: #2C2C2C; -fx-padding: 0 0 0 0;">
-                  <graphic>
-                      <ImageView fitHeight="21.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
-                              <Image url="@Vector.png" />
-                          </image>
-                      </ImageView>
-                  </graphic></Button>
-         <Button fx:id="exitTaskPaneButton" layoutX="6.0" layoutY="4.0" mnemonicParsing="false" onAction="#ExitTaskPaneButton" prefHeight="33.0" prefWidth="88.0" style="-fx-background-color: #2C2C2C; -fx-border-color: white; -fx-border-radius: 5px; -fx-padding: 0 0 0 0;" styleClass="JuraFont18" stylesheets="@fontStyles.css" text="Назад" textFill="WHITE">
-            <font>
-               <Font size="14.0" />
-            </font></Button>
-         <Button fx:id="swapHistory" layoutX="100.0" layoutY="4.0" mnemonicParsing="false" onAction="#SwapHistory" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: #2C2C2C; -fx-border-color: white; -fx-border-radius: 5px; -fx-padding: 0 0 0 0;" styleClass="JuraFont18" stylesheets="@fontStyles.css" text="История" textFill="WHITE">
-            <font>
-               <Font size="14.0" />
-            </font>
-         </Button>
-          </children>
-          <effect>
-              <DropShadow />
-          </effect>
-      </Pane>
-    <Pane fx:id="taskPane" layoutX="77.0" layoutY="50.0" prefHeight="548.0" prefWidth="800.0">
-        <children>
-         <Pane layoutX="60.0" prefHeight="529.0" prefWidth="681.0" style="-fx-background-color: E8E7E5;">
-            <children>
-                  <Pane layoutX="127.0" layoutY="17.0" prefHeight="496.0" prefWidth="428.0" style="-fx-background-color: FF8E3D; -fx-border-radius: 10px; -fx-background-radius: 10px;">
-                      <children>
-                          <TextArea fx:id="textAreaInfoMessage" layoutX="14.0" layoutY="100.0" prefHeight="341.0" prefWidth="399.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" />
-                          <Button fx:id="pinFileButton" layoutX="16.0" layoutY="446.0" mnemonicParsing="false" onAction="#PinFileButton" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: FF8E3D; -fx-border-color: #ffffff; -fx-border-radius: 5px;" styleClass="JuraFont18" stylesheets="@fontStyles.css" text="Прикрепить" textFill="#fcfcfc">
-                              <font>
-                                  <Font size="18.0" />
-                              </font>
-                     </Button>
-                          <TextField fx:id="textFieldNameMessage" layoutX="14.0" layoutY="38.0" prefHeight="30.0" prefWidth="399.0">
-                              <font>
-                                  <Font size="14.0" />
-                              </font>
-                     </TextField>
-                          <Label layoutX="15.0" layoutY="8.0" styleClass="JuraFont24" stylesheets="@fontStyles.css" text="Ф.И.О." textFill="WHITE">
-                              <font>
-                                  <Font size="20.0" />
-                              </font>
-                          </Label>
-                          <Label layoutX="16.0" layoutY="72.0" styleClass="JuraFont24" stylesheets="@fontStyles.css" text="Отчет" textFill="WHITE">
-                              <font>
-                                  <Font size="20.0" />
-                              </font>
-                          </Label>
-                        <Button fx:id="toSendButton" layoutX="218.0" layoutY="446.0" mnemonicParsing="false" onAction="#ToSendButton" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: FF8E3D; -fx-border-color: #ffffff; -fx-border-radius: 5px;" styleClass="JuraFont19" stylesheets="@fontStyles.css" text="Отправить" textFill="WHITE">
-                            <font>
-                                <Font size="18.0" />
-                            </font>
-                     </Button>
-                          <Label fx:id="pinFileNameLabel" layoutX="125.0" layoutY="411.0" prefHeight="30.0" prefWidth="172.0" textFill="#ff6f18">
-                              <font>
-                                  <Font name="Bookshelf Symbol 7" size="15.0" />
-                              </font>
-                     </Label>
-                      </children>
+               </Button>
+               <Button fx:id="exitTaskPaneButton" layoutX="6.0" layoutY="4.0" mnemonicParsing="false" onAction="#ExitTaskPaneButton" prefHeight="33.0" prefWidth="88.0" style="-fx-background-color: #2C2C2C; -fx-border-color: white; -fx-border-radius: 5px; -fx-padding: 0 0 0 0;" styleClass="JuraFont18" stylesheets="@fontStyles.css" text="Назад" textFill="WHITE">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="swapHistory" layoutX="100.0" layoutY="4.0" mnemonicParsing="false" onAction="#SwapHistory" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: #2C2C2C; -fx-border-color: white; -fx-border-radius: 5px; -fx-padding: 0 0 0 0;" styleClass="JuraFont18" stylesheets="@fontStyles.css" text="История" textFill="WHITE">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+                </children>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Pane>
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" prefHeight="550.0" prefWidth="800.0">
+      <children>
+          <Pane fx:id="taskPane" prefHeight="548.0" prefWidth="800.0">
+              <children>
+               <Pane fx:id="paneShadowTask" layoutX="60.0" prefHeight="529.0" prefWidth="681.0" style="-fx-background-color: E8E7E5; -fx-background-radius: 7px;">
+                  <children>
+                        <Pane fx:id="blankTaskPane" layoutX="127.0" layoutY="17.0" prefHeight="496.0" prefWidth="428.0" style="-fx-background-color: FF8E3D; -fx-background-radius: 10px;">
+                            <children>
+                                <TextArea fx:id="textAreaInfoMessage" layoutX="14.0" layoutY="100.0" prefHeight="341.0" prefWidth="399.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" />
+                                <Button fx:id="pinFileButton" graphicTextGap="2.0" layoutX="16.0" layoutY="446.0" mnemonicParsing="false" onAction="#PinFileButton" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: FF8E3D; -fx-border-color: #ffffff; -fx-border-radius: 5px; -fx-padding: 0 0 0 0;" styleClass="JuraFont18" stylesheets="@fontStyles.css" text="Прикрепить файл" textFill="#fcfcfc">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                              <graphic>
+                                 <ImageView fitHeight="22.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@Vector (1).png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </Button>
+                                <TextField fx:id="textFieldNameMessage" layoutX="14.0" layoutY="38.0" prefHeight="30.0" prefWidth="399.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                           </TextField>
+                                <Label fx:id="labelFIO" layoutX="15.0" layoutY="8.0" styleClass="JuraFont24" stylesheets="@fontStyles.css" text="Ф.И.О." textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="labelReport" layoutX="16.0" layoutY="72.0" styleClass="JuraFont24" stylesheets="@fontStyles.css" text="Отчет" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                              <Button fx:id="toSendButton" contentDisplay="RIGHT" graphicTextGap="10.0" layoutX="218.0" layoutY="446.0" mnemonicParsing="false" onAction="#ToSendButton" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: FF8E3D; -fx-border-color: #ffffff; -fx-border-radius: 5px; -fx-padding: 0 0 0 25;" styleClass="JuraFont19" stylesheets="@fontStyles.css" text="Отправить" textFill="WHITE">
+                                  <font>
+                                      <Font size="18.0" />
+                                  </font>
+                              <graphic>
+                                 <ImageView fitHeight="23.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@Vector (2).png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </Button>
+                                <Label fx:id="pinFileNameLabel" layoutX="139.0" layoutY="411.0" prefHeight="30.0" prefWidth="151.0" textFill="#ff6f18">
+                                    <font>
+                                        <Font name="Bookshelf Symbol 7" size="15.0" />
+                                    </font>
+                           </Label>
+                            </children>
+                        <effect>
+                           <DropShadow />
+                        </effect>
+                        </Pane>
+                  </children>
                   <effect>
-                     <DropShadow />
+                     <DropShadow blurType="ONE_PASS_BOX" height="45.61" offsetX="6.0" offsetY="8.0" radius="21.9375" width="44.14">
+                        <color>
+                           <Color red="0.25" green="0.22685185074806213" blue="0.22685185074806213" />
+                        </color>
+                     </DropShadow>
                   </effect>
-                  </Pane>
-            </children>
-            <effect>
-               <DropShadow blurType="ONE_PASS_BOX" height="50.0" offsetX="6.0" offsetY="8.0" radius="24.5" width="50.0">
-                  <color>
-                     <Color red="0.6052631735801697" green="0.5744395852088928" blue="0.5744395852088928" />
-                  </color></DropShadow>
-            </effect>
-         </Pane>
-        </children>
-    </Pane>
+               </Pane>
+              </children>
+          </Pane>
+      </children>
+   </HBox>
 </VBox>

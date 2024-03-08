@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -43,7 +44,14 @@ public class ToSendMessageController {
     @FXML
     public TextArea textAreaInfoMessage;
     public Label dateTextCreateTask;
+    public Label labelFIO;
+    public Button langTaskButton;
+    public Label labelReport;
     private String filePath = null;
+    public VBox toSendMessageVBox;
+    public Pane paneShadowTask;
+    public Button changeThemeTaskButton;
+    public Pane blankTaskPane;
     @FXML
     public Button closeProgramTask;
     //toSendMessageService.toSendMessage(textFieldNameMessage.getText() + '\n' + textAreaInfoMessage.getText());
@@ -91,7 +99,6 @@ public class ToSendMessageController {
                 outputStream.close();
             }
 
-
             int responseCode = connection.getResponseCode();
             System.out.println("Response Code: " + responseCode);
 
@@ -99,7 +106,6 @@ public class ToSendMessageController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
     @FXML
     public void PinFileButton(ActionEvent event){
@@ -125,6 +131,71 @@ public class ToSendMessageController {
     }
     @FXML
     public void initialize() {
+        if(MarsApplication.isRussian){
+            LangRU();
+        }
+        else{
+            LangEN();
+        }
+        if(MarsApplication.isTheme){
+            LightTheme();
+        }
+        else{
+            BlackTheme();
+        }
         dateTextCreateTask.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+    }
+    public void LangRU(){
+        langTaskButton.setText("RU");
+        labelFIO.setText("Ф.И.О.");
+        labelReport.setText("Отчет");
+        pinFileButton.setText("Прикрепить файл");
+        toSendButton.setText("Отправить");
+        exitTaskPaneButton.setText("Назад");
+        swapHistory.setText("История");
+    }
+    public void LangEN(){
+        langTaskButton.setText("EN");
+        labelFIO.setText("L.F.P.");
+        labelReport.setText("Report");
+        pinFileButton.setText("Attach a file");
+        toSendButton.setText("Send");
+        exitTaskPaneButton.setText("Back");
+        swapHistory.setText("History");
+    }
+    @FXML
+    public void LangTaskButton() {
+        if (MarsApplication.isRussian) {
+            MarsApplication.isRussian = false;
+            LangEN();
+        } else {
+            MarsApplication.isRussian = true;
+            LangRU();
+        }
+    }
+    public void BlackTheme(){
+        pinFileButton.setStyle("-fx-background-color: #2C2C2C; -fx-text-fill: white; -fx-padding: 0 0 0 0; -fx-border-color: #FFFFFF; -fx-border-radius: 5px");
+        toSendButton.setStyle("-fx-background-color: #2C2C2C; -fx-text-fill: white; -fx-padding:  0 0 0 25; -fx-border-color: #FFFFFF; -fx-border-radius: 5px");
+        toSendMessageVBox.setStyle("-fx-background-color: #8C8E97");
+        paneShadowTask.setStyle("-fx-background-color: #5F5F5F; -fx-background-radius: 7px");
+        blankTaskPane.setStyle("-fx-background-color: #2C2C2C; -fx-background-radius: 10px");
+
+    }
+    public void LightTheme(){
+        pinFileButton.setStyle("-fx-background-color: #FF8E3D; -fx-text-fill: white; -fx-padding: 0 0 0 0; -fx-border-color: #FFFFFF; -fx-border-radius: 5px");
+        toSendButton.setStyle("-fx-background-color: #FF8E3D; -fx-text-fill: white; -fx-padding:  0 0 0 25; -fx-border-color: #FFFFFF; -fx-border-radius: 5px");
+        toSendMessageVBox.setStyle("-fx-background-color: #FFFFFF");
+        paneShadowTask.setStyle("-fx-background-color: #E8E7E5; ; -fx-background-radius: 7px");
+        blankTaskPane.setStyle("-fx-background-color: #FF8E3D; -fx-background-radius: 10px");
+    }
+    public void ChangeThemeTaskButton(){
+        if (MarsApplication.isTheme){
+            MarsApplication.isTheme = false;
+            BlackTheme();
+        }
+        else{
+            MarsApplication.isTheme = true;
+            LightTheme();
+        }
     }
 }
