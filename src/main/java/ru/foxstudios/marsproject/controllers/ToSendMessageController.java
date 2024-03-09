@@ -58,7 +58,7 @@ public class ToSendMessageController {
     @FXML
     public void ToSendButton(ActionEvent event) {
         try {
-            URL url = new URL("http://127.0.0.1:56577/data/add");
+            URL url = new URL("http://127.0.0.1:30007/data/add");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
