@@ -28,7 +28,11 @@ application {
     mainModule = 'ru.foxstudios.marsproject'
     mainClass = 'ru.foxstudios.marsproject.MarsApplication'
 }
-
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = application.mainClass
+    }
+}
 javafx {
     version = '17'
     modules = ['javafx.controls', 'javafx.fxml']

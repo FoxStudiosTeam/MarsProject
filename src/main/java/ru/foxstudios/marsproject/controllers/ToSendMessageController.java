@@ -103,6 +103,9 @@ public class ToSendMessageController {
             System.out.println("Response Code: " + responseCode);
 
             connection.disconnect();
+            textAreaInfoMessage.setText("");
+            textFieldNameMessage.setText("");
+            filePath = null;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -115,7 +118,7 @@ public class ToSendMessageController {
         File selectedFile = fileChooser.showOpenDialog(stage);
         if (selectedFile != null){
             filePath = selectedFile.getAbsolutePath();
-            pinFileNameLabel.setText("Файл прикреплен");
+            pinFileNameLabel.setText("(Файл прикреплен/The file is attached)");
         }
     }
     @FXML
